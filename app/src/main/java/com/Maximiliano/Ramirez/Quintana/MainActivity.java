@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button Button_resta;
     private Button Button_division;
     private Button Button_multiplicacion;
+    private Button button_operacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Button_resta = findViewById(R.id.Button_resta);
         Button_multiplicacion = findViewById(R.id.Button_multiplicacion);
         Button_division = findViewById(R.id.Button_division);
+        button_operacion = findViewById(R.id.button_operacion);
 
         Button_suma.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +62,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        button_operacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirOperacion();
+            }
+        });
+
+    }
+
+    private void abrirOperacion() {
+        Intent intent = new Intent(this , operacion.class);
+        startActivity(intent);
     }
 
     private void abrirSuma() {
